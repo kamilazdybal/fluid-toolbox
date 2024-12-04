@@ -5,6 +5,8 @@
 *.toc
 *.ipynb_checkpoints
 *.pyc
+*.bbl
+*.blg
 *__pycache__
 *.DS_Store
 *.idea
