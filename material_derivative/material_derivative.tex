@@ -1,6 +1,6 @@
 \section{Where space, time, and fluid flow meet}
 
-The material derivative describes the \textit{total experienced} change in quantity $\bullet$ as \textit{time goes on} \textbf{and} as we \textit{move} across the field of $\bullet$ with fluid velocity, $\vec{\bm{V}} = \langle u, \upsilon, w \rangle$. Hence, the material derivative requires two ingredients; these are visualized in Fig.~\ref{fig:material-derivative-two-ingredients}. The first ingredient is the field of $\bullet$, which can change spatially and temporally (Fig.~\ref{fig:material-derivative-two-ingredients}a). The second ingredient is the associated fluid velocity field, $\vec{\bm{V}}$ (Fig.~\ref{fig:material-derivative-two-ingredients}b). In this chapter, you can substitute for $\bullet$ any interesting physical quantity that you'd like, such as density, $\rho$, or temperature, $T$. Interestingly, this quantity does not need to be a scalar, but can also be a vector or even a tensor.
+The material derivative describes the \textit{total experienced} change in quantity $\bullet$ as \textit{time goes on} \textbf{and} as we \textit{move} across the field of $\bullet$ with fluid velocity, $\vec{\bm{V}} = \langle u, \upsilon, w \rangle$. Hence, the material derivative requires two ingredients as visualized in Fig.~\ref{fig:material-derivative-two-ingredients}. The first ingredient is the field of $\bullet$, which can change spatially and temporally (Fig.~\ref{fig:material-derivative-two-ingredients}a). The second ingredient is the associated fluid velocity field, $\vec{\bm{V}}$ (Fig.~\ref{fig:material-derivative-two-ingredients}b). In this chapter, you can substitute for $\bullet$ any interesting physical quantity that you'd like, such as density, $\rho$, or temperature, $T$. Interestingly, this quantity does not need to be a scalar, but can also be a vector or even a tensor.
 \begin{figure}[H]
 \centering\includegraphics[width=15cm]{material-derivative-two-ingredients.pdf}
 \caption{Two ingredients needed to compute the material derivative: (\textbf{a}) the field of $\bullet$, which can change spatially and temporally, and (\textbf{b}) the associated fluid velocity field, $\vec{\bm{V}}$.}
@@ -33,16 +33,16 @@ First, some like to write the definition of the material derivative without spec
 \begin{equation} \label{eq:material-derivative-no-placeholder}
 \frac{D }{D t} \equiv \frac{\partial}{\partial t} + \vec{\bm{V}} \cdot \nabla \, .
 \end{equation}
-The unspoken assumption here is that the operator $\frac{D }{D t}$ always acts on \textit{something}, so you can apply this definition to any \textit{something} you like. In this chapter, I chose to explicitly indicate that \textit{something} with the ''$\bullet$`` symbol.
-In the most general 3D case, where $\vec{\bm{V}} = \langle u, \upsilon, w \rangle$, we can expand the dot product terms to obtain the following notation:
+The unspoken assumption here is that the operator $\frac{D }{D t}$ always acts on \textit{something}, so you can apply this definition to any \textit{something} you'd like. In this chapter, I choose to explicitly indicate that \textit{something} with the ``$\bullet$'' symbol.
+In the most general 3D case, where $\vec{\bm{V}} = \langle u, \upsilon, w \rangle$, we can expand the dot product term in Eq.~(\ref{eq:material-derivative}) to obtain the following notation:
 \begin{equation} \label{eq:material-derivative-full}
 \frac{D \bullet}{D t} \equiv \frac{\partial \bullet}{\partial t} + u \frac{\partial \bullet}{\partial x} + \upsilon \frac{\partial \bullet}{\partial y} + w \frac{\partial \bullet}{\partial z} \, .
 \end{equation}
-A yet another way of writing the equation above that you may encounter is the following:
+And yet another way of writing the equation above that you may encounter is the following:
 \begin{equation} \label{eq:material-derivative-ein stein}
 \frac{D \bullet}{D t} \equiv \frac{\partial \bullet}{\partial t} + V_i \frac{\partial \bullet}{\partial i} \, .
 \end{equation}
-This way of writing Eq.~(\ref{eq:material-derivative-full}) is using the Einstein notation where it is implied that you should substitute for the dummy index $i$ every possible spatial dimension, \textit{i.e.}, $x$, $y$, and $z$, and, as you substitute, you also sum up all the terms that form for each possible $i$.
+This way of writing Eq.~(\ref{eq:material-derivative-full}) uses the Einstein notation where it is implied that you should substitute for the dummy index $i$ every possible spatial dimension, \textit{i.e.}, $x$, $y$, and $z$, and, as you substitute, you also sum up all the terms that form for each possible $i$.
 
 \vfill
 
