@@ -1,12 +1,13 @@
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \usepackage{tgbonum}
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{epsf}
 \usepackage{float}
 \usepackage{mathpazo}
@@ -19,6 +20,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{subfloat}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{5pt}
 \usepackage
 [
 a4paper,% other options: a3paper, a5paper, etc
@@ -314,9 +317,9 @@ I believe in the quote by Richard Feynman: \textit{Study hard what interests you
 %\input{nondimensionalizing/nondimensionalizing.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-%\chapter{Conservation of mass}
+\chapter{Continuity equation}
 
-%\input{continuity/continuity.tex}
+\input{continuity/continuity.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 %\chapter{Gauss's law}
@@ -334,7 +337,7 @@ I believe in the quote by Richard Feynman: \textit{Study hard what interests you
 \input{constitutive_equations/const_eq.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-\chapter{The Navier-Stokes equations}
+\chapter{The Navier-Stokes equations} \label{chap:N-S}
 
 \input{navier_stokes/navier_stokes.tex}
 

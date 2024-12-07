@@ -1,6 +1,7 @@
-In this chapter we present the derivation of the conservation of mass equation, otherwise known as the \textbf{continuity equation}. In principle, it states that mass cannot be lost nor created.
+While the Navier-Stokes equations\footnote{See Chapter~\ref{chap:N-S}.} are all the rage in fluid dynamics, with people tattooing them on their bodies, I'm a big fan of the continuity equation for its modesty! The right-hand-side of the Navier-Stokes equations can become arbitrarily messy if we need to account for all the different sources of momentum change. But nothing can be taken away or added to the continuity equation. It's perfect just the way it is, and yet it describes one of the fundamental conservation laws that mass cannot be lost nor created. Powerful stuff, huh? That's its modest beauty that I hope to show you in this chapter!
 
-We begin by writing out the overall mass balance inside any control volume CV. The net change of mass inside the control volume is equal to the mass flowing into the CV minus the mass flowing out of the CV. Note here, that when the net change of mass in a CV is not zero (unsteady case), it can only be due to either compression (more mass flowing in than flowing out) or decompression (more mass flowing out than flowing in). The general mass balance is:
+
+In this chapter we present the derivation of the conservation of mass equation, otherwise known as the \textbf{continuity equation}. We begin by writing out the overall mass balance inside any control volume CV. The net change of mass inside the control volume is equal to the mass flowing into the CV minus the mass flowing out of the CV. Note here, that when the net change of mass in a CV is not zero (unsteady case), it can only be due to either compression (more mass flowing in than flowing out) or decompression (more mass flowing out than flowing in). The general mass balance is:
 
 \begin{equation} \label{eq:net_change}
 \text{net change} = \text{flow in} - \text{flow out}
@@ -62,9 +63,20 @@ So in the end, we can further write the RHS of the equation \ref{eq:continuity_g
 
 \section{Special cases of density function}
 
-In the most general case, the density $\rho$ is a function of time and space $\rho = \rho(t, x, y, z)$ and the equation \ref{eq:continuity_divergence} is written out for the most general case. Special cases can be defined when certain restrictions are imposed on the density function.
+So let's push the continuity equations to its limits! Let's see how many different physical scenarios can it describe.
+In the most general case, the density is a function of time and space, $\rho = \rho(t, x, y, z)$, and the Eq.~(\ref{eq:continuity_divergence}) is written out for the most general case. This describes the compressible, unsteady flow. But special cases can be defined when certain restrictions are imposed on the density function.
 
-\subsection{Incompressible flow}
+\textbf{Compressible, steady flow}
+
+First, when the density is only a function of position, $\rho = \rho(x,y,z)$, and does not change in time at any point in the flow field, we arrive at the steady-state condition where the derivative $\frac{\partial \rho}{dt} = 0$.
+
+The continuity equation then becomes:
+
+\begin{equation} \label{eq:continuity_stst}
+0 = - \nabla \cdot (\rho  \vec{V})
+\end{equation}
+
+\textbf{Incompressible, unsteady flow}
 
 When we assume that the density is constant in space, it can be taken out front of the divergence operator and the incompressible continuity equation is:
 
@@ -74,10 +86,7 @@ When we assume that the density is constant in space, it can be taken out front 
 
 The above equation corresponds to the density that is constant throughout the flow field at any moment in time, but can change in time in the entire flow field.
 
-
-
-
-\subsection{Incompressible, steady flow}
+\textbf{Incompressible, steady flow}
 
 The steady flow can be further combined with the incompressible condition, which disables the density to change both in time and space. The stead-state incompressible continuity equation then becomes:
 
@@ -90,21 +99,6 @@ or writing the above equation with the use of partial differentiation operator:
 \begin{equation}
 \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0
 \end{equation}
-
-
-\subsection{Compressible, steady flow}
-
-First, when the density $\rho$ is only a function of position $\rho = \rho(x,y,z)$ and does not change in time at any point in the flow field, we arrive at the steady state condition where the derivative $\frac{\partial \rho}{dt} = 0$.
-
-The continuity equation then becomes:
-
-\begin{equation} \label{eq:continuity_stst}
-0 = - \nabla \cdot (\rho  \vec{V})
-\end{equation}
-
-
-
-\section{Dimension reduction}
 
 
 
