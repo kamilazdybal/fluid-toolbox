@@ -5,17 +5,18 @@
 
 \rightline{{\rm --- David Bowie}}
 
+In studying fluid motion, we are inherently interested in \textbf{change} in various quantities associated with the fluid. For example, simply because of fluid moving around, its local density or its local temperature might change. With that perspective, the main goal of the science of fluid dynamics is to describe that change. We would like to know how flow affects various fluid properties such as density, pressure, temperature, or even things like mixture composition in multicomponent fluids.
+In this Chapter, we discuss the most fundamental building block for talking about change -- \textbf{a derivative}.
+
 \section{Derivatives model change}
 
-In studying fluid motion, we are inherently interested in \textbf{change} in various quantities associated with the fluid. For example, simply because of fluid moving around, its local density or its local temperature might change. With that perspective, the main goal of the science of fluid dynamics is to describe that change. We would like to know how flow affects various fluid properties such as density, pressure, temperature, or even mixture composition for multicomponent fluids.
-
-Change is mathematically modeled by derivatives. A derivative explains how much one variable, say $\phi_1$, changes when we change some other variable, say $\phi_2$, and we express this in mathematical terms as
+\textbf{Change} is mathematically modeled by \textbf{derivatives}. A derivative explains how much one variable, say $\varphi$, changes when we change some other variable, say $\psi$, and we express this in mathematical terms as
 \begin{equation*}\label{eq:change-d}
-\frac{d \phi_1}{d \phi_2} \, ,
+\frac{d \varphi}{d \psi} \, ,
 \end{equation*}
-where the letter $d$ stands for \textit{the change of...} and is later followed by the variable that we are speaking of. So really the above ratio means that there is \textit{this much} change in variable $\phi_1$ per \textit{this much} change in variable $\phi_2$. You can also think of this ratio as \textit{this much} change in variable $\phi_1$ per \textit{unit} change in variable $\phi_2$.
+where the letter $d$ stands for \textit{the change of...} and is later followed by the variable that we are speaking of. So really the above ratio means that there is \textit{this much} change in variable $\varphi$ per \textit{this much} change in variable $\psi$. You can also think of this ratio as \textit{this much} change in variable $\varphi$ per \textit{unit} change in variable $\psi$.
 
-In fluid dynamics, you will find that we are most interested in two types of change: \textit{change in time} and \textit{change in space}. Since we live in a 3D space with a time arrow, it is justifiable why these two have the biggest popularity, right? Therefore, you will most often encounter $dt$ or $dx$, $dy$, $dz$ in the denominator of various forms of derivatives.
+In fluid dynamics, you will find that we are most interested in two types of change: \textit{change in time} and \textit{change in space}. Since we live in a 3D space, with Cartesian coordinates $x$, $y$, and $z$, with a time arrow ($t$), it is justifiable why these two have the biggest popularity, right? Therefore, you will most often encounter $dt$, or $dx$, $dy$, and $dz$ in the denominator of various forms of derivatives.
 Let's take pressure, $p$, as an example. When we write
 \begin{equation*}\label{eq:change-p}
 \frac{d p}{d t} \, ,
@@ -23,37 +24,47 @@ Let's take pressure, $p$, as an example. When we write
 you can read this as: there is this much change in $p$ per this much change in $t$.
 Similarly, you may encounter expressions like
 \begin{equation*}\label{eq:change-p}
-\frac{d p}{d x} \,  , \,\, \frac{d p}{d y} \, , \,\, \frac{d p}{d z} \, ,
+\frac{d p}{d x} \,  , \,\, \frac{d p}{d y} \, , \,\, \text{and} \,\, \frac{d p}{d z} \, ,
 \end{equation*}
 which you can read as: change in $p$ per change in $x$, or $y$, or $z$.
 
 There is also another mathematical expression for a derivative and it is
 \begin{equation*}\label{eq:change-partial}
-\frac{\partial \phi_1}{\partial \phi_2} \, .
+\frac{\partial \varphi}{\partial \psi} \, .
 \end{equation*}
-The operator $\partial$ (called ''partial`` or ''del``) also stands for \textit{the change of...} but it also gives you a hint that the variable $\phi_1$ can change with the change of variables other than $\phi_2$. Perhaps it can also change with some $\phi_3$ and $\phi_4$, even though in this particular ratio from above we are only interested in the change with respect to $\phi_2$.
+The operator $\partial$ (called ''partial`` or ''del``) also stands for \textit{the change of...} but it also gives you a hint that the variable $\varphi$ can change with the change of variables other than $\psi$. Perhaps it can also change with some $\zeta$ and $\chi$, even though in this particular ratio from above we are only interested in the change with respect to $\psi$.
 
 There are what we call \textit{higher-order derivatives}, which can look like this:
 \begin{equation*}\label{eq:change-partial-2nd}
-\frac{\partial^2 \phi_1}{\partial \phi_2^2} \, .
+\frac{\partial^2 \varphi}{\partial \psi^2} \, .
 \end{equation*}
 What is their meaning? Well, we can also re-write the above as
 \begin{equation*}\label{eq:change-partial}
-\frac{\partial}{\partial \phi_2} \frac{\partial \phi_1}{\partial \phi_2} \, ,
+\frac{\partial}{\partial \psi} \frac{\partial \varphi}{\partial \psi} \, ,
 \end{equation*}
-and this way it's easier to see that this must have the interpretation of measuring how much the very change in $\phi_1$ is changing! In other words, we are describing how the quantity $\frac{\partial \phi_1}{\partial \phi_2}$ changes with the change to $\phi_2$. 
+and this way it's easier to see that this must have the interpretation of measuring how much the very change in $\varphi$ is changing! In other words, we are describing how the quantity 
+\begin{equation*}\label{eq:second-derivative}
+\frac{\partial \varphi}{\partial \psi}
+\end{equation*}
+changes with the change to $\psi$. 
 
-\section{Derivatives signal various transport processes}
+\section{On mixing derivatives} \label{sec:changes:mixing-derivatives}
+
+
+
+\subsection{Derivatives signal various transport processes}
+
+The really exciting part begins when we equate derivatives with respect to one quantity to derivatives with respect to other quantity! At first glance, it seems rather bizarre to say that a change in a variable in time might equal its change in space.
 
 A first-order derivative such as, for example,
 \begin{equation*}\label{eq:change-partial-1st}
-\frac{\partial p}{\partial x}
+\frac{\partial p}{\partial t} = \frac{\partial p}{\partial x}
 \end{equation*}
 is a model for the \textit{advection} of $p$. It describes how much change in $p$ are we going to experience along the spatial $x$-direction. In other words, how much of $p$ is being \textit{pushed} to the adjacent locations on the $x$-axis.
 
 A second-order derivative,
 \begin{equation*}\label{eq:change-partial-2nd}
-\frac{\partial^2 p}{\partial x^2} \, ,
+\frac{\partial p}{\partial t} = \frac{\partial^2 p}{\partial x^2} \, ,
 \end{equation*}
 is a model for the \textit{diffusion} of $p$. It describes how much change in $\frac{\partial p}{\partial x}$ are we going to experience along the $x$-direction. While the first-order derivative had the interpretation of how much $p$ is being pushed to the adjacent locations on the $x$-axis, with the second-order derivative we describe what is the strength of that ``pushing'' process.
 
@@ -106,13 +117,5 @@ We will now find out for all cases which pressure, at \textcolor{myblue}{$(i)$} 
 
 We will show the analogical result can be said about situations (c) and (d) but in this case the pressure is decreasing with the increasing $x$-coordinate.
 
-
-
-\subsection{Closing note}
-
 The analysis done in this section is often necessary in order to find out whether or not to ''put a minus sign`` in front of expressions. For instance, as we will show later in the text, such reasoning can help us understand why there is a minus sign in the Euler equation for a fluid element experiencing pressure force: $dp = - \rho \upsilon d \upsilon$. Oftentimes, the sign of a derivative tells an important information about the nature of the physical phenomena.
-
-
-
-
 

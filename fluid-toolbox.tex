@@ -233,9 +233,9 @@ Attribution-NonCommercial-ShareAlike 4.0 International
 
 I had a goal of collecting in one place the most important fluid dynamics concepts, as well as some prerequisites to studying fluid dynamics. Much of the knowledge presented here comes from my search for understanding that I was often missing when reading textbooks, and which was difficult to find in a way that would be engaging, illustrative, and would make intuitive sense to me. Some of the understanding presented here comes from my personal explorations and thinking on the subject, some of it comes from sources that I found very helpful -- I will make references to those as we go. I have hopes that this document will become a helpful resource that you have been looking for. Above all, I will know that it was worth writing it if you enjoy the journey of reading and learning from it!
 
-\textbf{Some of my thoughts on learning}
+\textbf{Some thoughts on learning}
 
-I believe in the quote by Richard Feynman: \textit{Study hard what interests you the most in the most undisciplined, irreverent, and original manner possible.} I will sometimes ask a brain-teasing question or challenge you to \textit{pause and ponder}. In your own learning, do challenge yourself, and don't let your imagination be limited by simply following pages of any textbook! When learning a new subject, it's simply not enough to read a textbook or watch a lecture; those are both easy tasks to do. When you become a spectator in the studying process, it's easy to fool yourself that you understood something. The real learning and understanding comes when it's only you, your head, and a blank piece of paper. It is only when you have a chance to take action in your recall of information that you can really use your knowledge and test your deep understanding. Oh, and by the way... Programming is a great way to roll your sleeves and put things into action. So is teaching others!\footnote{And so my sneaky goal is to learn some fluid dynamics writing this document!}
+I believe in the quote by Richard Feynman: \textit{``Study hard what interests you the most in the most undisciplined, irreverent, and original manner possible.''} I will sometimes ask a brain-teasing question or challenge you to \textit{pause and ponder}. In your own learning, do challenge yourself, and don't let your imagination be limited by simply following pages of any textbook! When learning a new subject, it's simply not enough to read a textbook or watch a lecture; those are both easy tasks to do. When you become a spectator in the studying process, it's easy to fool yourself that you understood something. The real learning and understanding comes when it's only you, your head, and a blank piece of paper. It is only when you have a chance to take action in your recall of information that you can really use your knowledge and test your deep understanding. Oh, and by the way... Programming is a great way to roll your sleeves and put things into action. So is teaching others!\footnote{And so my sneaky goal is to learn some fluid dynamics while writing this document!}
 
 \newpage
 \thispagestyle{empty}
@@ -282,24 +282,9 @@ I believe in the quote by Richard Feynman: \textit{Study hard what interests you
 \input{material_derivative/material_derivative.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-%\chapter{Divergence theorems}
+\chapter{Continuity equation}
 
-%\input{divergence_theorems/divergence_theorems.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-\chapter{Common flow types}
-
-\input{common_flow_types/common_flow_types.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-\chapter{Drag force}
-
-\input{drag_force/drag_force.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-\chapter{Circulation}
-
-\input{circulation/circulation.tex}
+\input{continuity/continuity.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 %\chapter{Vorticity}
@@ -307,29 +292,19 @@ I believe in the quote by Richard Feynman: \textit{Study hard what interests you
 %\input{vorticity/vorticity.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\chapter{Circulation}
+
+\input{circulation/circulation.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\chapter{Divergence theorems}
+
+%\input{divergence_theorems/divergence_theorems.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 %\chapter{Stoke's theorem}
 
 %\input{stokes_theorem/stokes_theorem.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-%\chapter{Nondimensionalizing}
-
-%\input{nondimensionalizing/nondimensionalizing.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-\chapter{Continuity equation}
-
-\input{continuity/continuity.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-%\chapter{Gauss's law}
-
-%\input{gauss_law/gauss_law.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-%\chapter{Reynolds number}
-
-%\input{reynolds_number/reynolds_number.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 \chapter{Constitutive equations}
@@ -342,9 +317,31 @@ I believe in the quote by Richard Feynman: \textit{Study hard what interests you
 \input{navier_stokes/navier_stokes.tex}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\chapter{Common flow types}
 
+\input{common_flow_types/common_flow_types.tex}
 
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\chapter{Drag force}
 
+\input{drag_force/drag_force.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\chapter{Nondimensionalizing}
+
+%\input{nondimensionalizing/nondimensionalizing.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\chapter{Gauss's law}
+
+%\input{gauss_law/gauss_law.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%\chapter{Reynolds number}
+
+%\input{reynolds_number/reynolds_number.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 \chapter*{Appendix}
 
