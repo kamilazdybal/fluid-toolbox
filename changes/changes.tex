@@ -5,8 +5,8 @@
 
 \rightline{{\rm --- David Bowie}}
 
-In studying fluid motion, we are inherently interested in \textbf{change} in various quantities associated with the fluid. For example, simply because of fluid moving around, its local density or its local temperature might change. With that perspective, the main goal of the science of fluid dynamics is to describe that change. We would like to know how flow affects various fluid properties such as density, pressure, temperature, or even things like mixture composition in multicomponent fluids.
-In this Chapter, we discuss the most fundamental building block for talking about change -- \textbf{a derivative}.
+In studying fluid motion, we are inherently interested in \textbf{change} in various quantities associated with the fluid. For example, simply because of fluid moving around, its local density or its local temperature might change. With that perspective, the main goal of the science of fluid dynamics is to describe and then calculate that change. Much of the time, we would like to know how flow affects various fluid properties such as its density, pressure, temperature, or even things like mixture composition in multicomponent fluids.
+In this Chapter, I discuss the most fundamental building block for talking about change -- \textbf{a derivative}. I hope to show you just how expressive derivatives are in terms of the various types of processes that they can describe!
 
 \section{Derivatives model change}
 
@@ -16,23 +16,37 @@ In this Chapter, we discuss the most fundamental building block for talking abou
 \end{equation*}
 where the letter $d$ stands for \textit{the change of...} and is later followed by the variable that we are speaking of. So really the above ratio means that there is \textit{this much} change in variable $\varphi$ per \textit{this much} change in variable $\psi$. You can also think of this ratio as \textit{this much} change in variable $\varphi$ per \textit{unit} change in variable $\psi$.
 
-In fluid dynamics, you will find that we are most interested in two types of change: \textit{change in time} and \textit{change in space}. Since we live in a 3D space, with Cartesian coordinates $x$, $y$, and $z$, with a time arrow ($t$), it is justifiable why these two have the biggest popularity, right? Therefore, you will most often encounter $dt$, or $dx$, $dy$, and $dz$ in the denominator of various forms of derivatives.
+In fluid dynamics, you will find that we are most interested in two types of change: \textit{change in time} and \textit{change in space}. Since we live in a 3D space, with Cartesian coordinates $x$, $y$, and $z$, with a time arrow ($t$), it is justifiable why these two have the biggest popularity, right? Therefore, you will most often encounter $dt$, or $dx$, $dy$, and $dz$, in the denominator of various forms of derivatives.
+
 Let's take pressure, $p$, as an example. When we write
 \begin{equation*}\label{eq:change-p}
 \frac{d p}{d t} \, ,
 \end{equation*}
-you can read this as: there is this much change in $p$ per this much change in $t$.
+you can read this as: there is this much change in $p$ per this much change in $t$. Here, we have implicitly assumed that $p = p(t)$, that is, that pressure is only a function of time (and not space).
 Similarly, you may encounter expressions like
 \begin{equation*}\label{eq:change-p}
 \frac{d p}{d x} \,  , \,\, \frac{d p}{d y} \, , \,\, \text{and} \,\, \frac{d p}{d z} \, ,
 \end{equation*}
-which you can read as: change in $p$ per change in $x$, or $y$, or $z$.
+which you can read as: change in $p$ per change in $x$, or $y$, or $z$. 
+Here, the assumption was that $p = p(x)$, or $p = p(y)$, or $p = p(z)$, respectively.
+
+The above are what we call \textit{ordinary derivatives}. They assume that the variable can change with respect to only one independent variable. But this does not always need to be the case. 
 
 There is also another mathematical expression for a derivative and it is
 \begin{equation*}\label{eq:change-partial}
 \frac{\partial \varphi}{\partial \psi} \, .
 \end{equation*}
 The operator $\partial$ (called ''partial`` or ''del``) also stands for \textit{the change of...} but it also gives you a hint that the variable $\varphi$ can change with the change of variables other than $\psi$. Perhaps it can also change with some $\zeta$ and $\chi$, even though in this particular ratio from above we are only interested in the change with respect to $\psi$.
+
+These are called \textit{partial derivatives}. If a variable is a function of more than one independent variable, say $p = p(x,t)$, we are no longer allowed to use ordinary derivatives to be mathematically precise\footnote{Although we all allow ourselves to be mathematically sloppy sometimes! And that's alright, as long as we remember how to be precise if needed.}. Therefore, if $p = p(x,t)$, and we want to express the change of $p$ with respect to time, we have to write
+\begin{equation*}\label{eq:change-partial}
+\frac{\partial p}{\partial t}
+\end{equation*}
+and we can no longer write
+\begin{equation*}\label{eq:change-partial}
+\frac{d p}{d t} \, .
+\end{equation*}
+
 
 There are what we call \textit{higher-order derivatives}, which can look like this:
 \begin{equation*}\label{eq:change-partial-2nd}
@@ -48,19 +62,24 @@ and this way it's easier to see that this must have the interpretation of measur
 \end{equation*}
 changes with the change to $\psi$. 
 
-\section{On mixing derivatives} \label{sec:changes:mixing-derivatives}
+\section{Mixing derivatives signals various transport processes} \label{sec:changes:mixing-derivatives}
 
+The really exciting part begins when we equate derivatives with respect to one quantity to derivatives with respect to other quantity. For instance, we can write that
+\begin{equation}\label{eq:dt-propto-dx}
+\frac{\partial p}{\partial t} \propto \frac{\partial p}{\partial x}
+\end{equation}
+for a particular point in space and time, and where the pressure, $p = p(x, t)$.
 
+At first glance, it seems rather bizarre to say that a variable's change in time is proportional to its change in space. In the end, I can imagine a function that varies in space and varies in time, but those variations are completely independent of each other. So what does creating a link between space and time mean...? Let's think about this a little more!
 
-\subsection{Derivatives signal various transport processes}
+First, we have to come to an agreement where exactly are we measuring $\partial p / \partial t$. With the continuum assumption of fluid dynamics, this is always some point in space, say $Q$. Now that we have selected $Q$, let's look at its local neighborhood to determine how does $p$ vary spatially there. This is what the term $\partial p / \partial x$ describes: How much change in $p$ is there along the spatial $x$-direction? But just the sheer existence of that change does not yet mean that our point $Q$ is going to experience any of it as time goes by! That change simply \textit{is}. If we now wanted it to affect our point $Q$, we need to somehow transport that change over to the location $Q$. And fluid's velocity is a great conveyor of that change! In this case, we have just one spatial dimension, therefore the fluid velocity vector $\vec{\bm{V}} = \langle u \rangle$. If we assume that the velocity component in the $x$-direction, $u$, is the constant of proportionality in Eq.~(\ref{eq:dt-propto-dx}), then we have just described an advection of $p$, which in its full form reads
+\begin{equation}\label{eq:advection-of-p}
+\frac{\partial p}{\partial t} = - u \frac{\partial p}{\partial x} \, .
+\end{equation}
+Equating the term $- u \partial p / \partial x$ to the temporal derivative, $\partial p / \partial t$, tells us how much of the spatial change in $p$ is being ``slided over'' to the fixed point in space, $Q$. And the strength of that ``sliding over'' is measured by the velocity component, $u$.
 
-The really exciting part begins when we equate derivatives with respect to one quantity to derivatives with respect to other quantity! At first glance, it seems rather bizarre to say that a change in a variable in time might equal its change in space.
-
-A first-order derivative such as, for example,
-\begin{equation*}\label{eq:change-partial-1st}
-\frac{\partial p}{\partial t} = \frac{\partial p}{\partial x}
-\end{equation*}
-is a model for the \textit{advection} of $p$. It describes how much change in $p$ are we going to experience along the spatial $x$-direction. In other words, how much of $p$ is being \textit{pushed} to the adjacent locations on the $x$-axis.
+Turns out, the link between time and space, embedded in Eq.~(\ref{eq:advection-of-p}), is necessary when we assume fluid's \textit{movement}. 
+As we have seen, a moving fluid can alter a point in time by bringing some spatial change over to that point. Only in the absence of movement can time and space be decoupled and completely independent of one another. It is appreciable that with a relatively simple mathematical description in Eq.~(\ref{eq:advection-of-p}), we have been able to describe this very useful transport phenomena!
 
 A second-order derivative,
 \begin{equation*}\label{eq:change-partial-2nd}
